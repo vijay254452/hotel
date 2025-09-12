@@ -1,51 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>foodi Restaurant</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header { background-color: #ff6347; color: white; padding: 20px; text-align: center; }
-    nav { background-color: #333; color: white; padding: 10px; text-align: center; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; }
-    main { padding: 20px; }
-    footer { background-color: #333; color: white; padding: 10px; text-align: center; }
-    img { max-width: 100%; height: auto; }
-  </style>
+    <meta charset="UTF-8">
+    <title>Foodie Restaurant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff8f0;
+            color: #333;
+        }
+
+        header {
+            background-color: #ff6347;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .restaurant-img {
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .menu-item {
+            background-color: #fff4e6;
+            padding: 10px;
+            border-radius: 10px;
+            width: 200px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <header>
+
+<header>
     <h1>Welcome to Foodie Restaurant</h1>
-  </header>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#menu">Menu</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <main>
-    <section id="about">
-      <h2>About Us</h2>
-      <p>Delicious food served with love and passion. Experience a cozy atmosphere and unforgettable flavors!</p>
-      <img src="restaurant.jpg" alt="Restaurant Image">
-    </section>
-    <section id="menu">
-      <h2>Our Menu</h2>
-      <ul>
-        <li>Pizza</li>
-        <li>Burger</li>
-        <li>Pasta</li>
-        <li>Salads</li>
-        <li>Desserts</li>
-      </ul>
-    </section>
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>Email: contact@foodierestaurant.com</p>
-      <p>Phone: +91 9876543210</p>
-    </section>
-  </main>
-  <footer>
-    &copy; 2025 foodie Restaurant. All rights reserved.
-  </footer>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>Delicious food served with love and passion. Experience a cozy atmosphere and unforgettable flavors!</p>
+    <img src="images/restaurant.jpg" alt="Restaurant Image" class="restaurant-img">
+</section>
+
+<section id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu">
+        <div class="menu-item">
+            <h3>Pizza</h3>
+            <img src="images/pizza.jpg" alt="Pizza">
+        </div>
+        <div class="menu-item">
+            <h3>Burger</h3>
+            <img src="images/burger.jpg" alt="Burger">
+        </div>
+        <div class="menu-item">
+            <h3>Pasta</h3>
+            <img src="images/pasta.jpg" alt="Pasta">
+        </div>
+        <div class="menu-item">
+            <h3>Salads</h3>
+            <img src="images/salad.jpg" alt="Salad">
+        </div>
+        <div class="menu-item">
+            <h3>Desserts</h3>
+            <img src="images/dessert.jpg" alt="Dessert">
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: contact@foodierestaurant.com</p>
+    <p>Phone: +91 9876543210</p>
+</section>
+
+<footer>
+    <p>&copy; 2025 Foodie Restaurant. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>
+
