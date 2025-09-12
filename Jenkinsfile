@@ -1,14 +1,18 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven3'   // Make sure Maven3 is configured in Jenkins (Global Tool Config)
+    }
+
     environment {
-        DOCKER_IMAGE = 'myrestaurant/restaurant-site:latest'
+        DOCKER_IMAGE = "myrestaurant/restaurant-site:latest"
     }
 
     stages {
         stage('Checkout') {
             steps {
-               git branch: 'main', url: 'https://github.com/vijay254452/hotel.git'
+                git branch: 'main', url: 'https://github.com/vijay254452/hotel.git'
             }
         }
 
@@ -20,23 +24,24 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh "docker build -t ${DOCKER_IMAGE} ."
-            }
-        }
-
-        stage('Push Docker Image') {
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
-                    sh "echo $PASS | docker login -u $USER --password-stdin"
-                    sh "docker push ${DOCKER_IMAGE}"
+                script {
+                    // Copy WAR into Docker image
+                    sh 'docker build -t $DOCKER_IMAGE .'
                 }
             }
         }
 
-        stage('Deploy') {
+        stage('Run Container') {
             steps {
-                echo "Run Docker container manually: docker run -d -p 3247:8080 ${DOCKER_IMAGE}"
+                script {
+                    // Stop old container if running
+                    sh 'docker rm -f myrestaurant || true'
+                    
+                    // Run new container on port 8080
+                    sh 'docker run -d --name myrestaurant -p 3247:8080 $DOCKER_IMAGE'
+                }
             }
         }
     }
 }
+
