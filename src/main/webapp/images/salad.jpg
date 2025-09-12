@@ -1,0 +1,13 @@
+--2025-09-12 17:40:51--  https://www.missinthekitchen.com/wp-content/uploads/2020/03/Green-Salad-Recipe-Image-683x1024.jpg
+Resolving www.missinthekitchen.com (www.missinthekitchen.com)... 104.26.7.47, 104.26.6.47, 172.67.73.219, ...
+Connecting to www.missinthekitchen.com (www.missinthekitchen.com)|104.26.7.47|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 118447 (116K) [image/jpeg]
+Saving to: ‘Green-Salad-Recipe-Image-683x1024.jpg’
+
+     0K .......... .......... .......... .......... .......... 43%  302M 0s
+    50K .......... .......... .......... .......... .......... 86% 19.9M 0s
+   100K .......... .....                                      100%  634M=0.003s
+
+2025-09-12 17:40:51 (42.9 MB/s) - ‘Green-Salad-Recipe-Image-683x1024.jpg’ saved [118447/118447]
+
